@@ -1,37 +1,48 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { _View, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 export default function ListaComponentes() {
 
-    const lista = ["Uva", "Maça", "Banana", "Laranja"]
+  const lista = ["Uva", "Maça", "Banana", "Laranja"]
 
 
   return (
-    <View>
-      
+    <View style={styles.container}> 
+
       {lista.map((fruta) => <Text style={styles.texto}>{fruta}</Text>)}
 
-     {lista.map((fruta) =>{
-
-        return (
-            <View>
-                
-
-            </View>
+      {lista.map(
+        (fruta) => {
+          return (
+            
+          <View style={styles.conteinerAmarelo}>
+            <Text style={styles.texto}> {fruta}</Text>
+          </View>
+          
         )
-     })}
+
+        }
+
+      )}
+
+
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: "red",
+  container: {
+    backgroundColor: "red",
+    alignItems: "center",
+    justifyContent: "center"
 
-    },
+  },
 
-    texto:{
-        fontSize: 20,
-        fontWeight: 600
-    }
+  texto: {
+    fontSize: 20,
+    fontWeight: 600
+  },
+  conteinerAmarelo:{
+    backgroundColor: "yellow"
+  }
 })
