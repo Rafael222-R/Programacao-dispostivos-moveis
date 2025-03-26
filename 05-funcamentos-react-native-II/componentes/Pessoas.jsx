@@ -16,7 +16,11 @@ export default function Pessoas(props) {
       <Text>Nome: {dados.nome}</Text>
       <Text>idade: {dados.idade}</Text>
       <Image 
-        source={}
+        source={{ uri: dados.Imagem}}
+        style={{
+            height:200,
+            width:200
+        }}
       
       
       />
