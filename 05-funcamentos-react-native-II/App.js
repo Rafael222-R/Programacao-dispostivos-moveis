@@ -6,6 +6,7 @@ import JavaScriptComponente from "./componentes/JavaScriptComponente";
 import Perfil from "./componentes/Perfil";
 import Pessoas from "./componentes/Pessoas";
 import ListaComponentes from "./componentes/ListaComponentes";
+import Atleta from "./componentes/Atleta";
 
 export default function App() {
 
@@ -74,8 +75,8 @@ const listaJogadores  =[
 {/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
 {/* Estamos usando outra forma de pegar informações via PROPS mas aqui ja temos um lista com verios objetos e estamos usando o MAP do java Aqui estamos usando os Componente em Pessoas  */}
 
-
-     {/*  {<Pessoas
+{/*
+       {<Pessoas
         dados={{
           nome: "Neymar",
           idade: 33,
@@ -130,12 +131,13 @@ const listaJogadores  =[
 
         }}
       />
- */}
+  */}
 
 {/*  Outra forma de se fazer igual o exemplo acima é criar uma lista direto aqui , Segue oexemplo a baixo, a lista foi insida aqui msm no cabeçalho*/}
 
 
-
+{/* explicação em sala de aula comente essa parte do codigo */}
+{/* 
 {listaJogadores.map (
   (jogador) => {
     return (
@@ -147,8 +149,30 @@ const listaJogadores  =[
 
   }
 )}
+ */}
+
+{/* Aqui foi feita a explicação em sala do professor a forma como poderiaos ter feito */}
+{/*  <Atleta
+nome="Neymar"
+idade={33}
+imagem="https://i.pinimg.com/736x/22/6b/ec/226beca8f934576f5cd3c3f8f35da693.jpg"
+  />
+ */}
+
+ {/* Novo jeito para se fazer , deixando o codigo mais limpo */}
 
 
+{listaJogadores.map(
+  jogador => {
+    return(
+      <Atleta 
+      nome={jogador.nome}
+      idade={jogador.idade}
+      imagem={jogador.Imagem}
+      />
+    )
+  }
+)}
 
 
 
