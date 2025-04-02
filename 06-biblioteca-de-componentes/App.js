@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View, FlatList } from "react-native";
 import {
   PaperProvider,
   Card,
@@ -11,15 +11,117 @@ import {
 } from "react-native-paper";
 
 export default function App() {
-  const lista = ["uva", "maca", "banana", "Laranja"];
+  /*  const lista = ["uva", "maca", "banana", "Laranja"]; */
+
+  /* uma Nova Lista a baixo  */
+  const lista = [
+    {
+      titulo: "card 1",
+      descricao:
+        " ayXPnDoBNt3YyN0LMFknqomP9cIxrDnL5wPDnKAejKnxmKA7AkAMJvsFdymr9175ud9GlxRkfrU5PbmRBgH11xy668QmwCfh8G7TdkAB4w91A2NIBdogND5x",
+      imagem:
+        "https://i.pinimg.com/236x/65/92/d2/6592d22f05d29398784337cd02a37e26.jpg",
+    },
+    {
+      titulo: "card 2",
+      descricao:
+        " ayXPnDoBNt3YyN0LMFknqomP9cIxrDnL5wPDnKAejKnxmKA7AkAMJvsFdymr9175ud9GlxRkfrU5PbmRBgH11xy668QmwCfh8G7TdkAB4w91A2NIBdogND5x",
+      imagem:
+        "https://i.pinimg.com/236x/65/92/d2/6592d22f05d29398784337cd02a37e26.jpg",
+    },
+    {
+      titulo: "card 3",
+      descricao:
+        " ayXPnDoBNt3YyN0LMFknqomP9cIxrDnL5wPDnKAejKnxmKA7AkAMJvsFdymr9175ud9GlxRkfrU5PbmRBgH11xy668QmwCfh8G7TdkAB4w91A2NIBdogND5x",
+      imagem:
+        "https://i.pinimg.com/236x/65/92/d2/6592d22f05d29398784337cd02a37e26.jpg",
+    },
+    {
+      titulo: "card 4",
+      descricao:
+        " ayXPnDoBNt3YyN0LMFknqomP9cIxrDnL5wPDnKAejKnxmKA7AkAMJvsFdymr9175ud9GlxRkfrU5PbmRBgH11xy668QmwCfh8G7TdkAB4w91A2NIBdogND5x",
+      imagem:
+        "https://i.pinimg.com/236x/65/92/d2/6592d22f05d29398784337cd02a37e26.jpg",
+    },
+    {
+      titulo: "card 5",
+      descricao:
+        " ayXPnDoBNt3YyN0LMFknqomP9cIxrDnL5wPDnKAejKnxmKA7AkAMJvsFdymr9175ud9GlxRkfrU5PbmRBgH11xy668QmwCfh8G7TdkAB4w91A2NIBdogND5x",
+      imagem:
+        "https://i.pinimg.com/236x/65/92/d2/6592d22f05d29398784337cd02a37e26.jpg",
+    },
+  ];
 
   return (
     <PaperProvider>
       <ScrollView>
-      <View style={styles.container}>
-        <StatusBar style="auto" />
+        <View style={styles.container}>
+          <StatusBar style="auto" />
 
-        <Button mode="contained" onPress={() => alert("Clicou")}> Cliqui Aqui</Button>
+          {/* Para usar o flatListe na Forma Horizontal , codigo abaixo */}
+          <FlatList
+          horizontal
+            data={lista}
+            renderItem={({ item }) => (
+              <Card>
+                <Card.Content>
+                  <Title> {item.titulo}</Title>
+                  <Paragraph>{item.descricao}</Paragraph>
+                </Card.Content>
+                <Card.Cover source={{ uri: item.imagem }} />
+              </Card>
+            )}
+          />
+
+          {/* utilizando o a segunda lista criada com Titulo, Descrição e Imagem */}
+
+          <FlatList
+            data={lista}
+            renderItem={({ item }) => (
+              <Card>
+                <Card.Content>
+                  <Title> {item.titulo}</Title>
+                  <Paragraph>{item.descricao}</Paragraph>
+                </Card.Content>
+                <Card.Cover source={{ uri: item.imagem }} />
+              </Card>
+            )}
+          />
+
+
+
+
+          {/* VEJAMOS OUTRA FORMA DE SE USAR A FUNÇÃO MAP */}
+
+          {/* Modelo antigo que fazemos */}
+          {/*  {
+          lista.map(
+            (frutas) => <Text>{frutas}</Text>
+          )
+        }
+
+        Modelo novo usando o Flatlist 
+
+        <FlatList
+        data={lista}
+        renderItem={({item}) => <Text>{item}</Text>}
+        />
+
+        <FlatList 
+        data={lista}
+        renderItem={({item}) =>
+        <View>
+
+          <Text>{item}</Text>
+          <Divider/>
+        </View>
+        
+        }
+        
+        /> */}
+
+          {/*eXPLICARÇÃO FEITA EM SALA DE AULA */}
+          {/* <Button mode="contained" onPress={() => alert("Clicou")}> Cliqui Aqui</Button>
         <Button mode="contained" onPress={() => alert("Clicou")}> Cliqui Aqui</Button>
         <Button icon="camera" mode="contained-tonal" > Cliqui Aqui</Button>
         <Button mode="elevated" > Cliqui Aqui</Button>
@@ -70,8 +172,8 @@ export default function App() {
               Um paragrafo Um paragrafo Um paragrafo Um paragrafo Um paragrafo{" "}
             </Paragraph>
           </Card.Content>
-        </Card>
-      </View>
+        </Card> */}
+        </View>
       </ScrollView>
     </PaperProvider>
   );
