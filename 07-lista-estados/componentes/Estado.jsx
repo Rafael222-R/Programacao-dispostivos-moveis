@@ -5,6 +5,7 @@ import Municipio from "./Municipio";
 
 export default function Estado(props) {
   const { nome, sigla, descricao, imagem, municipios } = props;
+  
   return (
     <View>
       <Card style={{ margin: 10 }}>

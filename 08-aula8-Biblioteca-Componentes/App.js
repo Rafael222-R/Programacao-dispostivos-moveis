@@ -36,13 +36,6 @@ export default function App() {
             component={ProfileScreen} 
             options={{
               title:'Inicio',
-              /* Aqui foi mostrado caso queira custumizar a seu modo */
-             /*  headerTitleAlign: 'center',
-              headerStyle: {
-                backgroundColor: 'orange'
-              },
-              tabBarInactiveBackgroundColor: 'black',
-              tabBarActiveBackgroundColor: 'orange', */
               tabBarIcon: ({color, size}) => <Ionicons name="person" color={color} size={size}/>
             }}
             
@@ -53,13 +46,6 @@ export default function App() {
            component={SettingsScreen} 
            options={{
             title:'Inicio',
-            /* Aqui foi mostrado caso queira custumizar a seu modo */
-           /*  headerTitleAlign: 'center',
-            headerStyle: {
-              backgroundColor: 'orange'
-            },
-            tabBarInactiveBackgroundColor: 'black',
-            tabBarActiveBackgroundColor: 'orange', */
             tabBarIcon: ({color, size}) => <Ionicons name="cog" color={color} size={size}/>
           }}
            />

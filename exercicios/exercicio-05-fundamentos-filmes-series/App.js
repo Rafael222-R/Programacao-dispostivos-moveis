@@ -2,7 +2,6 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import FilmeComponente from "./componentes/FilmeComponente";
-import SeriesComponentes from "./componentes/seriesComponentes";
 import Series from "./componentes/Series";
 
 export default function App() {

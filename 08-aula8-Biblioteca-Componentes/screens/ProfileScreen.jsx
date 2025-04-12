@@ -7,6 +7,13 @@ export default function ProfileScreen() {
     <ScrollView>
       <View>
         <Text>ProfileScreen</Text>
+        <Text>ProfileScreen</Text>
+        <Text>ProfileScreen</Text>
+        <Text>ProfileScreen</Text>
+        <Text>ProfileScreen</Text>
+        <Text>ProfileScreen</Text>
+        <Text>ProfileScreen</Text>
+        <Text>ProfileScreen</Text>
       </View>
     </ScrollView>
   );

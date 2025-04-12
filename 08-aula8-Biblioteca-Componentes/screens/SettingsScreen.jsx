@@ -6,6 +6,13 @@ export default function SettingsScreen() {
     <ScrollView>
       <View>
         <Text>SettingsScreen</Text>
+        <Text>SettingsScreen</Text>
+        <Text>SettingsScreen</Text>
+        <Text>SettingsScreen</Text>
+        <Text>SettingsScreen</Text>
+        <Text>SettingsScreen</Text>
+        <Text>SettingsScreen</Text>
+        <Text>SettingsScreen</Text>
       </View>
     </ScrollView>
   );
