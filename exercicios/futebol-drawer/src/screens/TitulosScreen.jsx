@@ -5,6 +5,21 @@ export default function TitulosScreen() {
   return (
     <View>
       <Text>TitulosScreen</Text>
+      <Text>TitulosScreen</Text>
+      <Text>TitulosScreen</Text>
+      <Text>TitulosScreen</Text>
+      <Text>TitulosScreen</Text>
+      <Text>TitulosScreen</Text>
+      <Text>TitulosScreen</Text>
+      <Text>TitulosScreen</Text>
+      <Text>TitulosScreen</Text>
+      <Text>TitulosScreen</Text>
+      <Text>TitulosScreen</Text>
+      <Text>TitulosScreen</Text>
+      <Text>TitulosScreen</Text>
+      <Text>TitulosScreen</Text>
+      <Text>TitulosScreen</Text>
+      <Text>TitulosScreen</Text>
     </View>
   )
 }
