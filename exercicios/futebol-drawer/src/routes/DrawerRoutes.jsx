@@ -35,6 +35,12 @@ export default function DrawerRoutes() {
     <Drawer.Screen 
     name="TitulosScreen" 
     component={TitulosScreen}
+    options={{
+        title: "Titulos",
+        drawerIcon: ({ color, size }) => (
+          <Ionicons name="football-outline" color={color} size={size} />
+        ),
+      }}
     
     />
     </Drawer.Navigator>
