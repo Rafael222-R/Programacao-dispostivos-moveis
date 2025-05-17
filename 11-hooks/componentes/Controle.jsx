@@ -3,14 +3,16 @@ import React, { useState } from "react";
 import { Card, Text, Button } from "react-native-paper";
 
 export default function Controle() {
-  const [volume, setVolume] = useState(10);
+  const [volume, setVolume] = useState(0);
 
   function aumentar() {
     setVolume(volume + 1);
   }
 
   function diminuir() {
-    setVolume(volume - 1);
+
+  if (volume > 0){
+    setVolume(volume - 1)}
   }
 
   return (

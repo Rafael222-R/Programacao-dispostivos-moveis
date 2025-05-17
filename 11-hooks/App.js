@@ -4,6 +4,8 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import NomeNumero from './componentes/NomeNumero';
 import Controle from "./componentes/Controle";
+import Pessoa from "./componentes/Pessoa";
+import GeradorNumeroAleatorio from "./componentes/GeradorNumeroAleatorio"
 
 export default function App() {
   return (
@@ -11,8 +13,11 @@ export default function App() {
       
       <StatusBar style="auto" />
 
-      <NomeNumero/>
-      <Controle />
+      {/* <NomeNumero/>
+      <Controle /> */}
+      <Pessoa />
+      <GeradorNumeroAleatorio />
+      
     </View>
   );
 }

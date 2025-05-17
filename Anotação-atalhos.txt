@@ -1,2 +1,4 @@
 Atalho para comentar uma Comentar uma Linha de comando inteira ( Shift + Alt + A )
 Atalho para forma o Codigo ( Shift + Alt + F )
+
+apagar ctrl + shift + k
