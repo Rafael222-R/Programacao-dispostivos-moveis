@@ -34,10 +34,8 @@ export default function GeradorNumeroAleatorio() {
     console.log(jogo)
     setJogoGerado(jogo)
 
-    for (let jogo  = 0; jogo < array.length; jogo++) {
-        const element = array[jogo];
-
-        console.log(element)
+    for (let jogo  = 0; jogo < jogo.length; jogo++) {
+        console.log(jogo)
         
     }
    
