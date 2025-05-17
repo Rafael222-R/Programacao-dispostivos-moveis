@@ -34,22 +34,19 @@ export default function GeradorNumeroAleatorio() {
     console.log(jogo)
     setJogoGerado(jogo)
 
-    for (let jogo  = 0; jogo < jogo.length; jogo++) {
-        console.log(jogo)
-        
-    }
+    const conjunto = new Set(jogo)
+    
+    console.log(conjunto.size)
+
+   
    
   }
   
   
 
-  function validar ([jogo]) {
-    for (let index = 0; index < array.length; index++) {
-        const element = array[index];
-        
-    }
+  
     
-  }
+  
 
   function resetar() {
     setNumeroAleatorio(0)
