@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import {  View } from "react-native";
 import React, { useState } from "react";
 import { Card, Text, Button } from "react-native-paper";
 
@@ -17,7 +17,7 @@ export default function GeradorNumeroAleatorio() {
     const jogo = []
     console.log(jogo)
    
-    const numero = Math.floor(Math.random() * 60) + 1;
+    /* const numero = Math.floor(Math.random() * 60) + 1;
     jogo.push(numero)
     const numero2 = Math.floor(Math.random() * 60) + 1;
     jogo.push(numero2)
@@ -29,24 +29,23 @@ export default function GeradorNumeroAleatorio() {
     jogo.push(numero5)
     const numero6 = Math.floor(Math.random() * 60) + 1;
     jogo.push(numero6)
-
+ */
     
+   for (let i = 0; jogo < 6; i++) {
+  console.log(i);  
+} 
+
     console.log(jogo)
     setJogoGerado(jogo)
 
-    const conjunto = new Set(jogo)
+   /* / const conjunto = new Set(jogo)
     
-    console.log(conjunto.size)
+    console.log(conjunto.size)  */
 
    
-   
-  }
-  
-  
 
-  
-    
-  
+}
+   
 
   function resetar() {
     setNumeroAleatorio(0)
@@ -79,5 +78,3 @@ export default function GeradorNumeroAleatorio() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({});
