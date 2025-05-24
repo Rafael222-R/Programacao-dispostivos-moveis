@@ -1,9 +1,9 @@
 import { FlatList, StyleSheet, View } from "react-native";
 import React, { useEffect, useState } from "react";
-import { Card, Text, Avatar,IconButton  } from "react-native-paper";
+import { Card, Text, Avatar, IconButton,  ActivityIndicator, MD2Colors } from "react-native-paper";
 import axios from "axios";
 
-export default function HomeScreen( {navigation, route}) {
+export default function HomeScreen({ navigation, route }) {
   const [usuarios, setUsuarios] = useState([]);
 
   //Fazer algo quando o usuário entrar na tela (Componente for montado)
@@ -14,7 +14,7 @@ export default function HomeScreen( {navigation, route}) {
     //Fazer uma requisição para buscar a lista de usuarios
 
     axios
-      .get("https://dummyjson.com/user")
+      .get("https://dummyjson.com/users?delay=5000") // Colocar p ?delay=5000 -- Para carregar os 5 segundos
       .then((resposta) => {
         console.log(resposta.data.users);
         setUsuarios(resposta.data.users);
@@ -27,21 +27,28 @@ export default function HomeScreen( {navigation, route}) {
   return (
     <View style={styles.container}>
       <FlatList
-      style={{marginBottom: 45}}
+        style={{ marginBottom: 45 }}
         data={usuarios}
         renderItem={({ item }) => (
-          <Card 
-          style={{margin: 8}}
-          onPress={() => navigation.navigate('UsuarioScreen',item.id)}
+          <Card
+            style={{ margin: 8 }}
+            onPress={() => navigation.navigate("UsuarioScreen", item.id)}
           >
-            
             <Card.Title
               title={item.firstName + "" + item.lastName}
               subtitle={item.email}
-              left={(props) => <Avatar.Image {...props}source={{uri: item.image}} />}
-              right={() => < IconButton icon="chevron-right" size={20}/>}
+              left={(props) => (
+                <Avatar.Image {...props} source={{ uri: item.image }} />
+              )}
+              right={() => <IconButton icon="chevron-right" size={20} />}
             />
           </Card>
+        )}
+        ListEmptyComponent={() => (
+          <View style={styles.loadingContainer}>
+            <ActivityIndicator animating={true} color={MD2Colors.red800} />
+            <Text> Carregando ....</Text>
+          </View>
         )}
       />
     </View>
@@ -51,6 +58,12 @@ export default function HomeScreen( {navigation, route}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
+    justifyContent: 'center',
   },
+  loadingContainer: {
+    height: 750,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
 });
