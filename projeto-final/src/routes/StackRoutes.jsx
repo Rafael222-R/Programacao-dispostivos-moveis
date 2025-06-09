@@ -7,6 +7,9 @@ import TabRoutes from "./TabRoutes";
 import ImagemCompletaScreen from "../screens/ImagemCompletaScreen";
 import ProdutoScreen from "../screens/ProdutoScreen";
 import CarrinhoScreen from "../screens/CarrinhoScreen";
+import CadastroLista from "../screens/CadastroLista";
+import CadastroScreen from "../screens/CadastroScreen";
+
 
 const Stack = createStackNavigator ();
 
@@ -40,6 +43,20 @@ export default function StackRoutes() {
   component={CarrinhoScreen} 
   
   />
+
+  <Stack.Screen 
+  name="CadastroLista"
+  component={CadastroLista}
+  />
+
+  
+
+  <Stack.Screen 
+  name="CadastroScreen"
+  component={CadastroScreen}
+  />
+
+  
 
 
 
