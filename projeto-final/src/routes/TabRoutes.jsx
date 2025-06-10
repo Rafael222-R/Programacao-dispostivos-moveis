@@ -18,7 +18,8 @@ const Tab = createBottomTabNavigator();
 
 export default function TabRoutes({route}) {
 
-  const usuario = route.params?.usuario;
+ const { usuario } = useAuth();
+
 
 
   return (
@@ -51,9 +52,7 @@ export default function TabRoutes({route}) {
 {usuario && (
   <Tab.Screen
     name="MeuCadastro"
-    children={() => (
-      <CadastroLista route={{ params: { idUsuario: usuario.id } }} />
-    )}
+    component={MeuCadastro}
     options={{
       title: "Meu Cadastro",
       headerTitleAlign: "center",
@@ -63,6 +62,7 @@ export default function TabRoutes({route}) {
     }}
   />
 )}
+
 
       {!usuario && (
         <Tab.Screen
@@ -77,6 +77,10 @@ export default function TabRoutes({route}) {
           }}
         />
       )}
+
+    
+
+    
     </Tab.Navigator>
   );
 }

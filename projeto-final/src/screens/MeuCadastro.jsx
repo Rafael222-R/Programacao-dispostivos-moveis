@@ -4,10 +4,13 @@ import { View } from 'react-native';
 import { Card, Text, Button } from 'react-native-paper';
 import CadastroService from '../contexts/CadastroService';
 import { useAuth } from '../contexts/AuthContext';
+import { useNavigation } from '@react-navigation/native';
 
-export default function MeuCadastro({ navigation }) {
-  const { usuario } = useAuth();
+export default function MeuCadastro() {
+  const { usuario, logout } = useAuth();
+  
   const [cadastro, setCadastro] = useState(null);
+  const navigation = useNavigation();
 
   useEffect(() => {
     async function carregar() {
@@ -42,9 +45,26 @@ export default function MeuCadastro({ navigation }) {
           <Button
             icon="pencil"
             mode="contained"
-            onPress={() => navigation.navigate('CadastroScreen', { ...cadastro })}
+            onPress={() =>
+              navigation.navigate('CadastroScreen', { ...cadastro })
+            }
           >
             Editar
+          </Button>
+
+          <Button
+            icon="logout"
+            mode="outlined"
+            onPress={async () => {
+              await logout();
+              navigation.reset({
+                index: 0,
+                routes: [{ name: 'HomeScreen' }],
+              });
+            }}
+            style={{ marginLeft: 10 }}
+          >
+            Sair
           </Button>
         </Card.Actions>
       </Card>

@@ -9,6 +9,7 @@ import ProdutoScreen from "../screens/ProdutoScreen";
 import CarrinhoScreen from "../screens/CarrinhoScreen";
 import CadastroLista from "../screens/CadastroLista";
 import CadastroScreen from "../screens/CadastroScreen";
+import MeuCadastro from "../screens/MeuCadastro";
 
 
 const Stack = createStackNavigator ();
@@ -30,6 +31,10 @@ export default function StackRoutes() {
     <Stack.Screen 
     name="ProdutoScreen"
     component={ProdutoScreen}
+    options={{
+      title: 'Produto',
+      headerTitleAlign: 'center'
+    }}
     />
 
     <Stack.Screen 
@@ -54,6 +59,11 @@ export default function StackRoutes() {
   <Stack.Screen 
   name="CadastroScreen"
   component={CadastroScreen}
+  />
+
+  <Stack.Screen 
+  name="MeuCadastro"
+  component={MeuCadastro}
   />
 
   
